@@ -1,0 +1,29 @@
+<h1>Pokémaniaco</h1>
+<video autoplay muted loop id="background-video">
+    <source src="assets/video/pikachu-and-caterpie-02.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+  </video>
+<form class="login-form" [formGroup]="loginForm" (submit)="onLogin($event)">
+<mat-form-field>
+<mat-label>Username</mat-label>
+<input matInput formControlName="username" />
+<mat-error *ngIf="loginForm.get('username')!.touched && 
+loginForm.get('username')!.hasError('required')">
+This Input is required</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+ <mat-label>Password</mat-label>
+ <input matInput formControlName="password" type="password" />
+ <mat-error *ngIf="loginForm.get('password')!.touched && 
+loginForm.get('password')!.hasError('required')">
+This Input is required</mat-error>
+</mat-form-field>
+
+<ng-container *ngIf="!loading; else spinner">
+    <button button mat-raised-button color="primary" type="submit">Login</button>
+</ng-container>
+</form>
+<ng-template #spinner>
+    <mat-spinner class="spinner" diameter="24"></mat-spinner>
+</ng-template>

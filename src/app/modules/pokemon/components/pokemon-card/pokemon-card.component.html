@@ -1,0 +1,16 @@
+<div class="pokemon-card" [ngClass]="getBackgroundPokemon(pokemon.types[0])">
+    <h2>{{ pokemon.name}}</h2>
+    <div class="pokemon-health">{{pokemon.base_experience}}</div>
+    <img class="pokemon-image" src="pokemon.imageUrl" alt="Pokemon Image">
+    <div class="pokemon-description">{{pokemon.description}}</div>
+</div>
+<div class="pokemon-info">
+    <p>ID: {{ pokemon.id }}</p>
+    <p>Height: {{ pokemon.height }}</p>
+    <p>Types: {{ pokemon.types.join(", ") }}</p>
+    <p>Abilities: {{ pokemon.abilities }}</p>
+  </div>
+  <button mat-fab disabled aria-label="Example icon button with a heart icon" (click)="addFavouritePokemon(pokemon)">
+    <mat-icon>favorite</mat-icon>
+  </button>
+

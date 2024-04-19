@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pokemon of pokemonData">
+        <td>ID:{{ pokemon.id }}</td>
+        <td>Nombre:{{ pokemon.name }}</td>
+        <td>
+          <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Sprite" width="50" height="50">
+        </td>
+      </tr>
+    </tbody>
+  </table>
