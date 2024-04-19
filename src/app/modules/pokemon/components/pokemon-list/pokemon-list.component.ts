@@ -15,9 +15,10 @@ export class PokemonListComponent implements OnInit {
   offset: number = 0;
   limit: number = 20;
   isLoading: boolean = false;
+  largeImage: string | null = null;;
 
   constructor(private pokemonService: PokemonService){}
-  
+
   ngOnInit(): void {
     this.loadInitialData();
   }
@@ -35,22 +36,31 @@ export class PokemonListComponent implements OnInit {
 
   loadInitialData(): void {
     this.isLoading = true;
-    this.pokemonService.getAllPokemonDetails().subscribe(data => {
+    this.pokemonService.fetchPokemons(this.limit, this.offset).subscribe(data => {
       this.pokemonData = data;
       this.isLoading = false;
     });
   }
-  
+
   loadMorePokemon(): void {
     this.isLoading = true;
     this.offset += this.limit;
-    this.pokemonService.getAllPokemonDetails().subscribe(data => { // Llama a getAllPokemonDetails() sin argumentos adicionales
+    this.pokemonService.fetchPokemons(this.limit, this.offset).subscribe(data => {
       if (data.length > 0) {
         this.pokemonData = this.pokemonData.concat(data);
       }
       this.isLoading = false;
     });
   }
+
+  showLargeImage(pokemon: Pokemon): void {
+    this.largeImage = pokemon.sprites.front_default;
+  }
 }
+
+ // onSearch(){
+   // console.log(this.name);
+  //}
+
 
 

@@ -1,18 +1,14 @@
-<table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Imagen</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let pokemon of pokemonData">
-        <td>ID:{{ pokemon.id }}</td>
-        <td>Nombre:{{ pokemon.name }}</td>
-        <td>
-          <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Sprite" width="50" height="50">
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="pokemon-container">
+  <div *ngFor="let pokemon of pokemonData" class="pokemon" (mouseover)="showLargeImage(pokemon)">
+    <div class="pokeball">
+      <img src="\assets\img\url_to_pokeball_icon.png" alt="Pokeball Icon" width="20" height="20">
+      {{ pokemon.id }}
+    </div>
+    <div class="pokemon-name">{{ pokemon.name }}</div>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Sprite" class="pokemon-image">
+  </div>
+</div>
+
+<div *ngIf="largeImage" class="large-image">
+  <img [src]="largeImage" alt="Pokemon Sprite">
+</div>

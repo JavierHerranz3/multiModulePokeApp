@@ -1,0 +1,54 @@
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+  }
+  
+  .pokemon {
+    width: calc(100% / 6); /* Calcula el ancho para 6 columnas */
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .pokeball {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: red; /* Color de fondo del Pokéball */
+    margin: 0 auto 5px; /* Centrar el Pokéball */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pokeball img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .pokemon-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .pokemon-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black; /* Añadir un borde negro */
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .large-image {
+    width: 50%;
+    float: right;
+    padding-left: 20px;
+  }
+  
+  .large-image img {
+    max-width: 100%;
+    height: auto;
+  }

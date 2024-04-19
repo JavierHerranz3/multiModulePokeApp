@@ -19,7 +19,6 @@ export class PokemonCardComponent {
     types: [],
     weight: 0,
     abilities: [],
-    imageUrl: '',
     description: '',
     height: 0,
     is_default: false,
@@ -31,7 +30,9 @@ export class PokemonCardComponent {
     location_area_encounters: '',
     moves: [],
     stats: [],
-    past_types: []
+    past_types: [],
+    species: undefined,
+    cries: undefined
   };
 
   getBackgroundPokemon(type: string): string {

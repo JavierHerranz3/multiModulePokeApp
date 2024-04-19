@@ -1,9 +1,10 @@
 <p>pokemon-page works!</p>
 <p>User Token: {{userToken}}</p>
-<mat-tab-group>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
     <mat-tab label="Tabla General">
       <!-- Contenido de la tabla general de Pokémon -->
       <app-pokemon-list></app-pokemon-list>
+      <img src="./../../../assets/img/spinner.svg" alt="Cargando" id="spinner" *ngIf="cargando">
     </mat-tab>
     <mat-tab label="Favoritos">
       <!-- Contenido de la vista de Pokémon favoritos -->
