@@ -55,7 +55,6 @@ export class PokemonService {
         types: data.types.map((type: any) => type.type.name),
         past_types: data.types.map((type: any) => type.type.name), // Reemplaza esto con la propiedad correcta si está disponible
         description: '', // Añade una descripción si tienes una fuente para ella
-        imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
       }))
     );
   }

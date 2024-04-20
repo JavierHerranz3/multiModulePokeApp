@@ -1,54 +1,148 @@
 .pokemon-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 100%; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar el contenedor */
-  }
-  
-  .pokemon {
-    width: calc(100% / 6); /* Calcula el ancho para 6 columnas */
-    text-align: center;
-    margin: 10px;
-  }
-  
-  .pokeball {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: red; /* Color de fondo del Pokéball */
-    margin: 0 auto 5px; /* Centrar el Pokéball */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .pokeball img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .pokemon-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .pokemon-image {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    border: 2px solid black; /* Añadir un borde negro */
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .large-image {
-    width: 50%;
-    float: right;
-    padding-left: 20px;
-  }
-  
-  .large-image img {
-    max-width: 100%;
-    height: auto;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.pokemon-card {
+  border: 2px solid #333; /* Color del borde de la carta */
+  border-radius: 15px; /* Radio de borde para dar forma de carta */
+  margin: 10px;
+  padding: 10px;
+}
+
+.pokemon {
+  width: 200px; /* Ancho de cada carta */
+  text-align: center;
+}
+
+.pokeball {
+  position: relative;
+}
+
+.pokeball img {
+  width: 80px;
+  height: 80px;
+}
+
+.pokeball-id {
+  position: absolute;
+  top: 40%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pokemon-details {
+  margin-top: 10px;
+}
+
+.pokemon-name {
+  font-weight: bold;
+}
+
+.large-image {
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+}
+
+.large-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pokemon-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-top: 5px;
+}
+
+.large-image {
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+}
+
+.large-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fire {
+  background-color: #FFA07A; /* Fuego */
+}
+
+.water {
+  background-color: #ADD8E6; /* Agua */
+}
+
+.grass {
+  background-color: #90EE90; /* Planta */
+}
+
+.electric {
+  background-color: #FFD700; /* Eléctrico */
+}
+
+.normal {
+  background-color: #D3D3D3; /* Normal */
+}
+
+.fighting {
+  background-color: #CD5C5C; /* Lucha */
+}
+
+.poison {
+  background-color: #9370DB; /* Veneno */
+}
+
+.ground {
+  background-color: #DEB887; /* Tierra */
+}
+
+.flying {
+  background-color: #87CEEB; /* Volador */
+}
+
+.psychic {
+  background-color: #FF69B4; /* Psíquico */
+}
+
+.bug {
+  background-color: #98FB98; /* Bicho */
+}
+
+.rock {
+  background-color: #A9A9A9; /* Roca */
+}
+
+.ghost {
+  background-color: #4B0082; /* Fantasma */
+}
+
+.ice {
+  background-color: #87CEFA; /* Hielo */
+}
+
+.dragon {
+  background-color: #8A2BE2; /* Dragón */
+}
+
+.dark {
+  background-color: #696969; /* Siniestro */
+}
+
+.steel {
+  background-color: #B0C4DE; /* Acero */
+}
+
+.fairy {
+  background-color: #FFB6C1; /* Hada */
+}

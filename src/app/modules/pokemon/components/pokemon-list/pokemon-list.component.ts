@@ -52,10 +52,6 @@ export class PokemonListComponent implements OnInit {
       this.isLoading = false;
     });
   }
-
-  showLargeImage(pokemon: Pokemon): void {
-    this.largeImage = pokemon.sprites.front_default;
-  }
 }
 
  // onSearch(){

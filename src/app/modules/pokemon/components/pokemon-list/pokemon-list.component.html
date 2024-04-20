@@ -1,11 +1,15 @@
 <div class="pokemon-container">
-  <div *ngFor="let pokemon of pokemonData" class="pokemon" (mouseover)="showLargeImage(pokemon)">
-    <div class="pokeball">
-      <img src="\assets\img\url_to_pokeball_icon.png" alt="Pokeball Icon" width="20" height="20">
-      {{ pokemon.id }}
+  <div *ngFor="let pokemon of pokemonData" class="pokemon-card" [ngClass]="pokemon.types">
+    <div class="pokemon">
+      <div class="pokeball">
+        <img src="/assets/img/url_to_pokeball_icon.png" alt="Pokeball Icon" >
+        <div class="pokeball-id">{{ pokemon.id }}</div>
+      </div>
+      <div class="pokemon-details">
+        <div class="pokemon-name">{{ pokemon.name }}</div>
+        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Image" class="pokemon-image">
+      </div>
     </div>
-    <div class="pokemon-name">{{ pokemon.name }}</div>
-    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Sprite" class="pokemon-image">
   </div>
 </div>
 
