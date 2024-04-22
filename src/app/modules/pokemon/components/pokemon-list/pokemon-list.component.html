@@ -1,4 +1,5 @@
 <div class="pokemon-container">
+  
   <div *ngFor="let pokemon of pokemonData" class="pokemon-card" [ngClass]="pokemon.types" (click)="verDetallePokemon(pokemon.name)">
     <div class="pokemon">
       <div class="pokeball">

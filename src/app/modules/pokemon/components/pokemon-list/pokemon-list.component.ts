@@ -5,13 +5,16 @@ import { Pokemon } from '../../../../core/models/pokemon.model';
 import { Router } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { PokemonCardComponent } from "../pokemon-card/pokemon-card.component";
+import { MatFormField } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-pokemon-list',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
-  templateUrl: './pokemon-list.component.html',
-  styleUrl: './pokemon-list.component.css'
+    selector: 'app-pokemon-list',
+    standalone: true,
+    templateUrl: './pokemon-list.component.html',
+    styleUrl: './pokemon-list.component.css',
+    imports: [CommonModule, MatButtonModule, MatIconModule, PokemonCardComponent, MatFormField, FormsModule]
 })
 export class PokemonListComponent implements OnInit {
   pokemonData: Pokemon[] = [];
@@ -19,6 +22,7 @@ export class PokemonListComponent implements OnInit {
   limit: number = 20;
   isLoading: boolean = false;
   selectedPokemon: Pokemon | null = null;
+  searchTerm: string = '';
 
   constructor(private pokemonService: PokemonService, private router: Router){}
 
@@ -67,11 +71,23 @@ export class PokemonListComponent implements OnInit {
     // Llama al método addToFavorites del servicio PokemonService para agregar el Pokemon a la lista de favoritos
     this.pokemonService.addToFavorites(pokemon.name);
   }
+
+  onSearch(): void {
+    // Filtra los Pokémon según el término de búsqueda
+    if (this.searchTerm.trim() !== '') {
+      // Convierte el término de búsqueda a minúsculas para que la búsqueda no distinga entre mayúsculas y minúsculas
+      const searchTermLowerCase = this.searchTerm.trim().toLowerCase();
+      // Filtra una copia de los datos originales y actualiza pokemonData con los resultados filtrados
+      this.pokemonData = this.pokemonData.filter(pokemon =>
+        pokemon.name.toLowerCase().includes(searchTermLowerCase)
+      );
+    } else {
+      // Si el campo de búsqueda está vacío, muestra todos los Pokémon nuevamente
+      this.loadInitialData();
+    }
+  }
 }
 
- // onSearch(){
-   // console.log(this.name);
-  //}
 
 
 

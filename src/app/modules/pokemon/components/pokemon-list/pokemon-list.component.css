@@ -14,7 +14,7 @@
 }
 
 .pokemon {
-  width: 200px; /* Ancho de cada carta */
+  width: 250px; /* Ancho de cada carta */
   text-align: center;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .pokeball img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .pokeball-id {
@@ -57,8 +57,8 @@
 }
 
 .pokemon-image {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid black;
   margin-top: 5px;
