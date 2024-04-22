@@ -26,22 +26,74 @@
     margin-top: 10px;
     text-align: justify;
 }
-.fire-background {
-    background-color: red; 
-  }
-  
-.water-background {
-    background-color: rgb(50, 182, 230); 
-  }
-  
-.default-background {
-    background-color: gray; 
-  }
-  
-.grass-background{
-    background-color: green;
-  }
+.fire {
+  background-color: #FFA07A; /* Fuego */
+}
 
-.electric-background{
-    background-color: yellow;
+.water {
+  background-color: #ADD8E6; /* Agua */
+}
+
+.grass {
+  background-color: #90EE90; /* Planta */
+}
+
+.electric {
+  background-color: #FFD700; /* Eléctrico */
+}
+
+.normal {
+  background-color: #D3D3D3; /* Normal */
+}
+
+.fighting {
+  background-color: #CD5C5C; /* Lucha */
+}
+
+.poison {
+  background-color: #9370DB; /* Veneno */
+}
+
+.ground {
+  background-color: #DEB887; /* Tierra */
+}
+
+.flying {
+  background-color: #87CEEB; /* Volador */
+}
+
+.psychic {
+  background-color: #FF69B4; /* Psíquico */
+}
+
+.bug {
+  background-color: #98FB98; /* Bicho */
+}
+
+.rock {
+  background-color: #A9A9A9; /* Roca */
+}
+
+.ghost {
+  background-color: #4B0082; /* Fantasma */
+}
+
+.ice {
+  background-color: #87CEFA; /* Hielo */
+}
+
+.dragon {
+  background-color: #8A2BE2; /* Dragón */
+}
+
+.dark {
+  background-color: #696969; /* Siniestro */
+}
+
+.steel {
+  background-color: #B0C4DE; /* Acero */
+}
+
+.fairy {
+  background-color: #FFB6C1; /* Hada */
 }

@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { ActivatedRoute } from '@angular/router';
 import { Sprites, Species, Cries } from '../../../../core/models/pokemon.model';
+import { PokemonService } from '../../../../core/services/pokemon.service';
 
 
 @Component({
@@ -16,13 +17,26 @@ import { Sprites, Species, Cries } from '../../../../core/models/pokemon.model';
   styleUrl: './pokemon-card.component.css'
 })
 export class PokemonCardComponent implements OnInit{
-
-  constructor(private route: ActivatedRoute) { }
+  pokemonData: Pokemon[] = [];
+  
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {
+    
+   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    // Usa el ID para obtener los datos del Pokemon desde tu servicio o arreglo de datos
-    // this.pokemon = this.pokemonDataService.getPokemonById(id);
+    const name = this.route.snapshot.paramMap.get('name');
+    if (name !== null) {
+      this.loadPokemonData(name);
+    } else {
+      // Lógica para manejar el caso en que 'name' sea nulo
+      console.error("El nombre del Pokémon es nulo.");
+    }
+  }
+  loadPokemonData(name: string): void {
+    // Llama al servicio para obtener los datos del Pokémon por su nombre
+    this.pokemonService.fetchPokemonByName(name).subscribe(pokemon => {
+      this.pokemon = pokemon;
+    });
   }
   @Input() pokemon: Pokemon = {
     id: 0,

@@ -1,1 +1,12 @@
-<p>favourite-pokemon-list works!</p>
+<div *ngIf="favorites.length > 0">
+    <p>Número de Pokémon favoritos: {{ favorites.length }}</p>
+    <ul>
+      <li *ngFor="let pokemonId of favorites">
+        <!-- Mostrar información del Pokémon favorito -->
+        {{ pokemonId }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="favorites.length === 0">
+    <p>No tienes Pokémon favoritos.</p>
+  </div>

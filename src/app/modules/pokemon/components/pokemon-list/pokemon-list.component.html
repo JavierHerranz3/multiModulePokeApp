@@ -1,8 +1,8 @@
 <div class="pokemon-container">
-  <div *ngFor="let pokemon of pokemonData" class="pokemon-card" [ngClass]="pokemon.types">
+  <div *ngFor="let pokemon of pokemonData" class="pokemon-card" [ngClass]="pokemon.types" (click)="verDetallePokemon(pokemon.name)">
     <div class="pokemon">
       <div class="pokeball">
-        <img src="/assets/img/url_to_pokeball_icon.png" alt="Pokeball Icon" >
+        <img src="/assets/img/url_to_pokeball_icon.png" alt="Pokeball Icon">
         <div class="pokeball-id">{{ pokemon.id }}</div>
       </div>
       <div class="pokemon-details">
@@ -10,9 +10,10 @@
         <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Image" class="pokemon-image">
       </div>
     </div>
+    <div class="favorite-button-container" (click)="addToFavourites(pokemon)">
+      <button mat-icon-button color="warn" aria-label="Add to Favorites">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <span>Add to Favorites</span>
+    </div>
   </div>
-</div>
-
-<div *ngIf="largeImage" class="large-image">
-  <img [src]="largeImage" alt="Pokemon Sprite">
-</div>

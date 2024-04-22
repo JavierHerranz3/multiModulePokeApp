@@ -146,3 +146,17 @@
 .fairy {
   background-color: #FFB6C1; /* Hada */
 }
+
+.favorite-button-container {
+  background-color: #D3D3D3;
+  padding: 3px; /* Espaciado interno */
+  border: 1px solid black; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-top: 20px; /* Espaciado superior para separarlo del contenedor de Pokémon */
+  display: flex; /* Utiliza flexbox para alinear el botón y el texto */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.favorite-button-container button {
+  margin-right: 10px; /* Espaciado a la derecha del botón */
+}

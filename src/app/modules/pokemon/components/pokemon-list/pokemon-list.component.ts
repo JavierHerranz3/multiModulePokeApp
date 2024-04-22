@@ -2,11 +2,14 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { PokemonService } from '../../../../core/services/pokemon.service';
 import { CommonModule } from '@angular/common';
 import { Pokemon } from '../../../../core/models/pokemon.model';
+import { Router } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
@@ -15,12 +18,16 @@ export class PokemonListComponent implements OnInit {
   offset: number = 0;
   limit: number = 20;
   isLoading: boolean = false;
-  largeImage: string | null = null;;
+  selectedPokemon: Pokemon | null = null;
 
-  constructor(private pokemonService: PokemonService){}
+  constructor(private pokemonService: PokemonService, private router: Router){}
 
   ngOnInit(): void {
     this.loadInitialData();
+  }
+
+  selectPokemon(pokemon: Pokemon): void {
+    this.selectedPokemon = pokemon;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -51,6 +58,14 @@ export class PokemonListComponent implements OnInit {
       }
       this.isLoading = false;
     });
+  }
+
+  verDetallePokemon(name: string) {
+    this.router.navigate(['/pokemon-card', name]);
+  }
+  addToFavourites(pokemon: Pokemon): void {
+    // Llama al método addToFavorites del servicio PokemonService para agregar el Pokemon a la lista de favoritos
+    this.pokemonService.addToFavorites(pokemon.name);
   }
 }
 

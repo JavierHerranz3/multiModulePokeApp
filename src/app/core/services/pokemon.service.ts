@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
-import { forkJoin, Observable } from 'rxjs';
+import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private favouritePokemons: Pokemon[] = [];
+  private favorites: string[] = [];
+  private favoritesSubject = new BehaviorSubject<string[]>([]);
 
   constructor(private http: HttpClient) {}
 
@@ -59,7 +60,24 @@ export class PokemonService {
     );
   }
 
-  addFavouritePokemon(pokemon: Pokemon): void {
-    this.favouritePokemons.push(pokemon);
+  addToFavorites(pokemonName: string): void {
+    if (!this.isFavorite(pokemonName)) {
+      this.favorites.push(pokemonName);
+      this.favoritesSubject.next(this.favorites);
+    }
+  }
+
+  removeFromFavorites(pokemonName: String): void {
+    this.favorites = this.favorites.filter(name => name !== pokemonName);
+    this.favoritesSubject.next(this.favorites);
+  }
+
+ // getFavorites(): BehaviorSubject<String[]> {
+   // return this.favoritesSubject;
+  //}
+
+  isFavorite(pokemonName: string): boolean {
+    return this.favorites.includes(pokemonName);
   }
 }
+
