@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pokemon } from '../models/pokemon.model';
+
 import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
+import { Pokemon } from '../../../../core/models/pokemon.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PokemonService {
   private favorites: string[] = [];
   private favoritesSubject = new BehaviorSubject<string[]>([]);

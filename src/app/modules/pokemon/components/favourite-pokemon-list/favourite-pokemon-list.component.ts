@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { PokemonService } from '../../../../core/services/pokemon.service';
+import { PokemonService } from '../services/pokemon.service';
+
 
 @Component({
   selector: 'app-favourite-pokemon-list',
-  standalone: true,
-  imports: [],
   templateUrl: './favourite-pokemon-list.component.html',
   styleUrl: './favourite-pokemon-list.component.css'
 })

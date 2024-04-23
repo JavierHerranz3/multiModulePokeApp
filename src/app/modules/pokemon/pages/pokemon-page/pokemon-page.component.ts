@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, input } from '@angular/core';
 import { AuthenticationService } from '../../../../core/services/authentication.service';
-import { MatTabsModule } from '@angular/material/tabs';
-import { PokemonListComponent } from '../../components/pokemon-list/pokemon-list.component';
-import { CommonModule } from '@angular/common';
-import { PokemonService } from '../../../../core/services/pokemon.service';
+
+
 import { Pokemon } from '../../../../core/models/pokemon.model';
+import { Router } from '@angular/router';
+import { MatTabChangeEvent } from '@angular/material/tabs';
+import { PokemonService } from '../../components/services/pokemon.service';
+
 @Component({
-  selector: 'app-pokemon-page',
-  standalone: true,
-  imports: [MatTabsModule, PokemonListComponent, CommonModule, PokemonListComponent],
-  templateUrl: './pokemon-page.component.html',
-  styleUrl: './pokemon-page.component.css'
+    selector: 'app-pokemon-page',
+    templateUrl: './pokemon-page.component.html',
+    styleUrl: './pokemon-page.component.css',
 })
 export class PokemonPageComponent implements OnInit {
+  @Input({required:true}) tab!: string;
+  activeTab: number;
   userToken: string | null;
   cargando:boolean = false;
   searchTerm: string = '';
@@ -20,13 +22,24 @@ export class PokemonPageComponent implements OnInit {
   filteredPokemonData: Pokemon[] = [];
   isLoading: boolean = false;
 
-  constructor(private authenticationService: AuthenticationService, private pokemonService: PokemonService){
+  constructor(private authenticationService: AuthenticationService, private pokemonService: PokemonService,
+    private router: Router){
     this.userToken = null;
+    this.activeTab = 0;
   }
+
   ngOnInit(): void {
     this.authenticationService.authToken$.subscribe((value) => {this.userToken = value;
     });
     
+    const tab= this.router.url.split('/')[2];
+    if(tab === 'list'){
+      this.activeTab = 0;
+    }
+
+    if(tab === 'favourites'){
+      this.activeTab = 1;
+    }
   } 
 
   onSearch(): void {
@@ -41,6 +54,17 @@ export class PokemonPageComponent implements OnInit {
     } else {
       // Si el campo de búsqueda está vacío, muestra todos los Pokémon nuevamente
       
+    }
+  }
+
+  onSelectedTabChanged(event: MatTabChangeEvent){
+    if(event.index === 0){
+      this.router.navigateByUrl('pokemon/list');
+      return;
+    }
+    if(event.index === 1) {
+      this.router.navigateByUrl('pokemon/favourites');
+      return;
     }
   }
 }

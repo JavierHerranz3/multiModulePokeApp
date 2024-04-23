@@ -1,14 +1,13 @@
-<div *ngFor="let pokemon of pokemonData" class="pokemon-card" [ngClass]="pokemon.types">
-  <h2>{{ pokemon.name}}</h2>
-  <div class="pokemon-experiencie">{{pokemon.base_experience}}</div>
-  <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Image" class="pokemon-image">
-  <div class="pokemon-description">{{pokemon.description}}</div>
-  <div class="pokemon-info">
-    <p>ID: {{ pokemon.id }}</p>
-    <p>Height: {{ pokemon.height }}</p>
-    <p>Types: {{ pokemon.types.join(", ") }}</p>
-    <p>Abilities: {{ pokemon.abilities }}</p>
-    <p>Species: {{ pokemon.species }}</p>
-  </div>
-</div>
+
+<app-card  (detailClick)="onDetailClick()">
+   <div class="pokemon">
+      <div class="pokeball">
+        <img src="/assets/img/url_to_pokeball_icon.png" alt="Pokeball Icon">
+        <div class="pokeball-id">{{ pokemon.id }}</div>
+      </div>
+      <div class="pokemon-details">
+        <div class="pokemon-name">{{ pokemon.name }}</div>
+        <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} Image" class="pokemon-image">
+      </div>
+    </div></app-card>
 

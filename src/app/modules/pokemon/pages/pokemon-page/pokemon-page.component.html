@@ -1,10 +1,13 @@
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-    <mat-tab label="Tabla General">
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [selectedIndex]="activeTab"
+(selectedTabChange)="onSelectedTabChanged($event)">
+    <mat-tab label="List">
       <!-- Contenido de la tabla general de Pokémon -->
-      <app-pokemon-list></app-pokemon-list>
+     
     </mat-tab>
-    <mat-tab label="Favoritos">
+    <mat-tab label="Favourites">
       <!-- Contenido de la vista de Pokémon favoritos -->
-      <p>Número de Pokémon favoritos:</p>
+      
     </mat-tab>
   </mat-tab-group>
+  <router-outlet></router-outlet>
+ 

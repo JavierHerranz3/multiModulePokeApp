@@ -23,14 +23,14 @@
 }
 
 .pokeball img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height:110px;
 }
 
 .pokeball-id {
   position: absolute;
-  top: 40%;
-  left: 54%;
+  top: 40.3%;
+  left: 54.4%;
   transform: translate(-50%, -50%);
   color: black;
   font-weight: bold;
@@ -57,11 +57,16 @@
 }
 
 .pokemon-image {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 2px solid black;
   margin-top: 5px;
+}
+
+.pokeball_back{
+  width: 10px;
+  height:10px;
 }
 
 .large-image {
@@ -145,18 +150,4 @@
 
 .fairy {
   background-color: #FFB6C1; /* Hada */
-}
-
-.favorite-button-container {
-  background-color: #D3D3D3;
-  padding: 3px; /* Espaciado interno */
-  border: 1px solid black; /* Borde */
-  border-radius: 5px; /* Bordes redondeados */
-  margin-top: 20px; /* Espaciado superior para separarlo del contenedor de Pokémon */
-  display: flex; /* Utiliza flexbox para alinear el botón y el texto */
-  align-items: center; /* Alinea los elementos verticalmente */
-}
-
-.favorite-button-container button {
-  margin-right: 10px; /* Espaciado a la derecha del botón */
 }

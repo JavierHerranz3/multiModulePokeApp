@@ -1,1 +1,9 @@
-<p>card works!</p>
+<div class="card">
+<ng-content></ng-content>
+  <button class="detail-button" (click)="onDetailClick()" mat-stroked-button>
+    Details
+  </button>   
+  <button class="favourite-button" (click)="onFavouriteClick()" mat-fab disabled aria-label="Example icon button with a heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>      
+ </div>

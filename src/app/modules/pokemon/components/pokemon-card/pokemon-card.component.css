@@ -1,31 +1,85 @@
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .pokemon-card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #333; /* Color del borde de la carta */
+  border-radius: 15px; /* Radio de borde para dar forma de carta */
+  margin: 10px;
+  padding: 10px;
+}
+
+.pokemon {
+  width: 250px; /* Ancho de cada carta */
+  text-align: center;
+}
+
+.pokeball {
+  position: relative;
+}
+
+.pokeball img {
+  width: 110px;
+  height:110px;
+}
+
+.pokeball-id {
+  position: absolute;
+  top: 40.3%;
+  left: 54.4%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pokemon-details {
+  margin-top: 10px;
 }
 
 .pokemon-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
+  font-weight: bold;
+}
+
+.large-image {
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+}
+
+.large-image img {
+  max-width: 100%;
+  height: auto;
 }
 
 .pokemon-image {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-top: 5px;
 }
 
-.pokemon-description {
-    margin-top: 10px;
-    text-align: justify;
+.pokeball_back{
+  width: 10px;
+  height:10px;
 }
+
+.large-image {
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+}
+
+.large-image img {
+  max-width: 100%;
+  height: auto;
+}
+
 .fire {
   background-color: #FFA07A; /* Fuego */
 }
