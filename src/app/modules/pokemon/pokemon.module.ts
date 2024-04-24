@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { PokemonService } from './components/services/pokemon.service';
+import { PokemonDetailComponent } from '../../pokemon-detail/pokemon-detail.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PokemonService } from './components/services/pokemon.service';
     PokemonCardComponent,
     FavouritePokemonListComponent,
     PokemonCardComponent,
+    PokemonDetailComponent,
   ],
   imports: [
     CommonModule,

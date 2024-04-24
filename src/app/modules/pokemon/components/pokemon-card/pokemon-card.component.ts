@@ -1,12 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from '../../../../core/models/pokemon.model';
-
 import { ActivatedRoute } from '@angular/router';
-
-
-
-import { switchMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
 import { PokemonService } from '../services/pokemon.service';
 
 
@@ -30,6 +24,5 @@ export class PokemonCardComponent implements OnInit{
   
   onDetailClick() {
     this.detailClick.emit()
-  }
-  
+  }  
 }

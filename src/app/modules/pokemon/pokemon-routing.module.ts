@@ -3,9 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokemonPageComponent } from './pages/pokemon-page/pokemon-page.component';
 import { FavouritePokemonListComponent } from './components/favourite-pokemon-list/favourite-pokemon-list.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
-import { BerriesComponent } from '../berries/pages/berries-page/berries.component';
-import { BerriesListComponent } from '../berries/berries-list/berries-list.component';
-import { FavouriteBerriesListComponent } from '../berries/favourite-berries-list/favourite-berries-list.component';
 import { PokemonDetailComponent } from '../../pokemon-detail/pokemon-detail.component';
 
 const routes: Routes = [
